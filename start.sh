@@ -5,7 +5,7 @@ kubectl apply -f namespaces.yaml
 kubectl apply -n kube-system -f $PWD/infra/networking/ingress-controller/traefik
 sleep 10
 kubectl apply -n cd -f $PWD/infra/continuous-delivery/argo-cd
-sleep 60
+sleep 120
 kubectl apply -f $PWD/infra/visibility/metrics-server/application.yaml
 sleep 10
 kubectl apply -f $PWD/infra/visibility/elk-operator/application.yaml
