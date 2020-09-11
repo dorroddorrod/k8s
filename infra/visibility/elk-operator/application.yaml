@@ -18,3 +18,12 @@ spec:
     automated:
       prune: false
       selfHeal: false
+  ignoreDifferences:
+    - group: beats.beat.k8s.elastic.co
+      kind: CustomResourceDefinition
+      jsonPointers:
+        - /spec/properties/daemonSet/properties
+    - group: elastic-webhook.k8s.elastic.co
+      kind: ValidatingWebhookConfiguration
+      jsonPointers:
+        - /webhooks/clientConfig/caBundle
