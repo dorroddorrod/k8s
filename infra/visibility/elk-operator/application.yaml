@@ -22,7 +22,7 @@ spec:
     - group: beats.beat.k8s.elastic.co
       kind: CustomResourceDefinition
       jsonPointers:
-        - /spec/properties/daemonSet/properties
+        - /spec
     - group: elastic-webhook.k8s.elastic.co
       kind: ValidatingWebhookConfiguration
       jsonPointers:
