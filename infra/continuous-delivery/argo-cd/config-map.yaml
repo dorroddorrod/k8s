@@ -12,6 +12,10 @@ data:
           hs = {}
           hs.status = "Healthy"
           return hs
+    apiextensions.k8s.io/CustomResourceDefinition:
+        ignoreDifferences: |
+           jsonPointers:
+           - /status
 ---
 apiVersion: v1
 kind: ConfigMap
