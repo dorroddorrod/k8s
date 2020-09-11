@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 minikube start --cpus=6 --memory=10000
 sleep 120
-minikube addons enable metrics-server
 kubectl apply -f namespaces.yaml
 kubectl apply -n kube-system -f $PWD/infra/network/ingress-controller/traefik
 sleep 10
