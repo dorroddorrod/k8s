@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: traefik-metrics
+  namespace: kube-system
+  labels:
+    k8s-app: app
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: traefik-web-ui
+  endpoints:
+    - port: web
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: argocd-server-metrics
+  namespace: cd
+  labels:
+    k8s-app: app
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-server-metrics
+  endpoints:
+    - port: metrics

@@ -33,4 +33,6 @@ sleep 120
 kubectl apply -f $PWD/applications/example-app-metrics/application.yaml
 sleep 10
 kubectl apply -f $PWD/applications/example-app-logs/application.yaml
+sleep 10
+kubectl apply -f service_monitor.yaml
 minikube addons enable metrics-server
