@@ -2,7 +2,7 @@
 minikube start --cpus=6 --memory=10000
 sleep 120
 kubectl apply -f namespaces.yaml
-kubectl apply -n kube-system -f $PWD/infra/network/ingress-controller/traefik
+kubectl apply -n kube-system -f $PWD/infra/networking/ingress-controller/traefik
 sleep 10
 kubectl apply -n cd -f $PWD/infra/continuous-delivery/argo-cd
 sleep 60
