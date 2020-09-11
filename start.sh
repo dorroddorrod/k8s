@@ -1,36 +1,37 @@
 #!/usr/bin/env bash
-path=/Users/dormull/Documents/Repositories/k8s
 minikube start --cpus=6 --memory=10000
 sleep 120
 minikube addons enable metrics-server
 kubectl apply -f namespaces.yaml
-kubectl apply -n kube-system -f $path/metrics-server
-sleep 60
-kubectl apply -n kube-system -f $path/traefik
+kubectl apply -n kube-system -f $PWD/infra/network/ingress-controller/traefik
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/elk-operator
+kubectl apply -n cd -f $PWD/infra/cd/argo-cd
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/elk-cluster
+kubectl apply -f $PWD/infra/visibility/metrics-server/application.yaml
+sleep 10
+kubectl apply -f $PWD/infra/visibility/elk-operator/application.yaml
+sleep 10
+kubectl apply -f $PWD/infra/visibility/elk-cluster/application.yaml
 sleep 120
-#kubectl apply -n weave -f $path/weave-scope
+#kubectl apply -n weave -f $PWD/infra/visibility/weave-scope
 #sleep 10
-kubectl apply -n monitoring -f $path/monitoring/fluent-bit/setup
+kubectl apply -f $PWD/infra/visibility/fluent-bit/setup/application.yaml
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/fluent-bit/logging-stack
+kubectl apply -f $PWD/infra/visibility/fluent-bit/logging-stack/application.yaml
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/prometheus-operator
+kubectl apply -f $PWD/infra/visibility/prometheus-operator/application.yaml
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/prometheus-cluster-monitoring
+kubectl apply -f $PWD/infra/visibility/prometheus-cluster-monitoring/application.yaml
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/grafana
+kubectl apply -f $PWD/infra/visibility/grafana/application.yaml
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/alertmanager
+kubectl apply -f $PWD/infra/visibility/alertmanager/application.yaml
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/kube-state-metrics
+kubectl apply -f $PWD/infra/visibility/kube-state-metrics/application.yaml
 sleep 10
-kubectl apply -n monitoring -f $path/monitoring/node-exporter
+kubectl apply -f $PWD/infra/visibility/node-exporter/application.yaml
 sleep 120
-kubectl apply -n example -f $path/example-app-metrics
+kubectl apply -f $PWD/applications/example-app-metrics/application.yaml
 sleep 10
-kubectl apply -n example -f $path/example-app-logs
+kubectl apply -f $PWD/applications/example-app-logs/application.yaml
 minikube addons enable metrics-server
