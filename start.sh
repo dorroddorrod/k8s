@@ -5,7 +5,7 @@ minikube addons enable metrics-server
 kubectl apply -f namespaces.yaml
 kubectl apply -n kube-system -f $PWD/infra/network/ingress-controller/traefik
 sleep 10
-kubectl apply -n cd -f $PWD/infra/continuous-deployment/argo-cd
+kubectl apply -n cd -f $PWD/infra/continuous-delivery/argo-cd
 sleep 10
 kubectl apply -f $PWD/infra/visibility/metrics-server/application.yaml
 sleep 10
