@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deploy-logs
+  labels:
+    app: example-app-logs
+spec:
+  selector:
+    matchLabels:
+      app: example-app-logs
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: example-app-logs
+        facility: kuku
+    spec:
+      containers:
+        - name: example-app-logs
+          image: sikwan/random-json-logger:latest
+          imagePullPolicy: Always
+          ports:
+            - name: web
+              containerPort: 8080
+          resources:
+            requests:
+              memory: "50Mi"
+              cpu: "500m"
+            limits:
+              memory: "500Mi"
+              cpu: "2000m"

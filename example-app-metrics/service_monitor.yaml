@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: example-app-metrics
+  labels:
+    k8s-app: app
+spec:
+  selector:
+    matchLabels:
+      app: example-app-metrics
+  endpoints:
+    - port: web
+  targetLabels:
+    - facility

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deploy-metrics
+  labels:
+    app: example-app-metrics
+spec:
+  selector:
+    matchLabels:
+      app: example-app-metrics
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: example-app-metrics
+    spec:
+      containers:
+        - name: example-app-metrics
+          image: quay.io/brancz/prometheus-example-app:v0.3.0
+          imagePullPolicy: Always
+          ports:
+            - name: web
+              containerPort: 8080
+          volumeMounts:
+            - name: config-volume-metrics
+              mountPath: /configs/
+          resources:
+            requests:
+              memory: "50Mi"
+              cpu: "500m"
+            limits:
+              memory: "500Mi"
+              cpu: "2000m"
+      volumes:
+        - name: config-volume-metrics
+          configMap:
+            name: example-config-metrics

@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kibana
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.frontend.rule.type: PathPrefixStrip
+    #traefik.ingress.kubernetes.io/redirect-entry-point: https
+    #traefik.ingress.kubernetes.io/redirect-permanent: "true"
+spec:
+  rules:
+    - host: kibana.kubernetes.local
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: elk-kb-http
+              servicePort: 5601
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: elasticsearch
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.frontend.rule.type: PathPrefixStrip
+    #traefik.ingress.kubernetes.io/redirect-entry-point: https
+    #traefik.ingress.kubernetes.io/redirect-permanent: "true"
+spec:
+  rules:
+    - host: elasticsearch.kubernetes.local
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: elk-es-http
+              servicePort: 9200

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-service-metrics
+  labels:
+    app: example-app-metrics
+    facility: kuku
+spec:
+  selector:
+    app: example-app-metrics
+  ports:
+    - protocol: TCP
+      name: web
+      port: 80
+      targetPort: 8080
