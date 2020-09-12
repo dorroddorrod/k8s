@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jaeger-operator
+  namespace: cd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    targetRevision: HEAD
+    path: infra/visibility/jaeger-operator
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false

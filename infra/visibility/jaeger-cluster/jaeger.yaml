@@ -1,0 +1,11 @@
+apiVersion: io.jaegertracing/v1alpha1
+kind: Jaeger
+metadata:
+  name: simple-prod
+spec:
+  strategy: production
+  storage:
+    type: elasticsearch
+    options:
+      es:
+        server-urls: http://elk-es-default.monitoring.svc:9200
