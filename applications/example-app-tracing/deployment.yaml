@@ -26,15 +26,6 @@ spec:
         - name: example-app-tracing
           image: jaegertracing/example-hotrod:1.19
           imagePullPolicy: Always
-          env:
-            - name: JAEGER_AGENT_HOST
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.hostIP
-
-#          ports:
-#            - name: web
-#              containerPort: 8080
           resources:
             requests:
               memory: "50Mi"
