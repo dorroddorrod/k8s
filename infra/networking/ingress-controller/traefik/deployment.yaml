@@ -4,6 +4,8 @@ metadata:
   name: traefik-ingress-controller
   labels:
     k8s-app: traefik-ingress-lb
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
 spec:
   replicas: 1
   selector:
@@ -34,6 +36,14 @@ spec:
             - --metrics.prometheus.buckets=0.1,0.3,1.2,5.0
             - --logLevel=INFO
             - --configFile=/etc/traefik/config.toml
+            - --tracing.jaeger=true
+            - --tracing.serviceName=traefik-service
+            - --tracing.jaeger.samplingParam=1.0
+            - --tracing.jaeger.samplingType=const
+            - --tracing.jaeger.samplingServerURL=http://localhost:5778/sampling
+            - --tracing.jaeger.localAgentHostPort=127.0.0.1:6831
+            - --tracing.jaeger.propagation=jaeger
+            - --tracing.jaeger.traceContextHeaderName=uber-trace-id
           volumeMounts:
             - name: traefik-config
               mountPath: /etc/traefik/
