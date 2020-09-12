@@ -19,7 +19,7 @@ This setup includes:
 * Weave-scope
 ## Getting started
 
-First, we will need to set few DNS records in ```etc/hosts``` file to be able access the cluster resources
+First, we will need to set few DNS records in ```/etc/hosts``` file to be able access the cluster resources
 ```aidl
 127.0.0.1 app.kubernetes.local
 127.0.0.1 grafana.kubernetes.local
