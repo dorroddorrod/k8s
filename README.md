@@ -9,7 +9,7 @@ This setup includes:
 * Metrics-server
 * ArgoCd
 * Grafana
-* Elk-operator
+* ELK-operator
 * ElasticSearch
 * Kibana
 * Example application for logs
