@@ -42,8 +42,6 @@ spec:
             - --tracing.jaeger.samplingType=const
             - --tracing.jaeger.samplingServerURL=http://localhost:5778/sampling
             - --tracing.jaeger.localAgentHostPort=127.0.0.1:6831
-            - --tracing.jaeger.propagation=jaeger
-            - --tracing.jaeger.traceContextHeaderName=uber-trace-id
           volumeMounts:
             - name: traefik-config
               mountPath: /etc/traefik/
