@@ -14,6 +14,7 @@ This setup includes:
 * Kibana
 * Example application for logs
 * Example application for metrics
+* Example application for tracing
 * Fluent-bit operator
 * Fluent-bit deamonset
 * Weave-scope
@@ -24,6 +25,7 @@ This setup includes:
 First, we will need to set few DNS records in ```/etc/hosts``` file to be able access the cluster components
 ```aidl
 127.0.0.1 app.kubernetes.local
+127.0.0.1 app-tracing.kubernetes.local
 127.0.0.1 grafana.kubernetes.local
 127.0.0.1 prometheus.kubernetes.local
 127.0.0.1 traefik.kubernetes.local
