@@ -17,6 +17,8 @@ This setup includes:
 * Fluent-bit operator
 * Fluent-bit deamonset
 * Weave-scope
+* Jaeger operator
+* Jaeger cluster
 ## Getting started
 
 First, we will need to set few DNS records in ```/etc/hosts``` file to be able access the cluster components
