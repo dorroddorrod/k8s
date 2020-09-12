@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: example-app-logs
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
