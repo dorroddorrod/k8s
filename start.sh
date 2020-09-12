@@ -6,6 +6,8 @@ kubectl apply -n kube-system -f $PWD/infra/networking/ingress-controller/traefik
 sleep 10
 kubectl apply -n cd -f $PWD/infra/continuous-delivery/argo-cd
 sleep 120
+kubectl apply -f $PWD/infra/visibility/prometheus-operator/application.yaml
+sleep 10
 kubectl apply -f $PWD/infra/visibility/metrics-server/application.yaml
 sleep 10
 kubectl apply -f $PWD/infra/visibility/elk-operator/application.yaml
@@ -17,8 +19,6 @@ sleep 120
 kubectl apply -f $PWD/infra/visibility/fluent-bit/setup/application.yaml
 sleep 10
 kubectl apply -f $PWD/infra/visibility/fluent-bit/logging-stack/application.yaml
-sleep 10
-kubectl apply -f $PWD/infra/visibility/prometheus-operator/application.yaml
 sleep 10
 kubectl apply -f $PWD/infra/visibility/prometheus-cluster-monitoring/application.yaml
 sleep 10
