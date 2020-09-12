@@ -29,6 +29,10 @@ sleep 10
 kubectl apply -f $PWD/infra/visibility/kube-state-metrics/application.yaml
 sleep 10
 kubectl apply -f $PWD/infra/visibility/node-exporter/application.yaml
+sleep 10
+kubectl apply -f $PWD/infra/visibility/jaeger-operator/application.yaml
+sleep 10
+kubectl apply -f $PWD/infra/visibility/jaeger-cluster/application.yaml
 sleep 120
 kubectl apply -f $PWD/applications/example-app-metrics/application.yaml
 sleep 10
