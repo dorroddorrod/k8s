@@ -31,6 +31,7 @@ First, we will need to set few DNS records in ```/etc/hosts``` file to be able a
 127.0.0.1 elasticsearch.kubernetes.local
 127.0.0.1 kibana.kubernetes.local
 127.0.0.1 argo.kubernetes.local
+127.0.0.1 jaeger.kubernetes.local
 ```
 
 After setting up the DNS records, you can run the cluster by running :
