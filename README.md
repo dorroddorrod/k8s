@@ -52,7 +52,7 @@ To observe the cluster state, open another terminal and run :
 minikube dashboard
 ```
 
-To get the web-ui ArgoCd password (for admin user) , run :
+To get the ArgoCd web-ui password (for admin user) , run :
 ```
 kubectl get pods -n cd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
 ```
