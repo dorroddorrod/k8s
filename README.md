@@ -2,6 +2,7 @@
 This setup includes:
 
 * Traefik ingress controller
+* OpenFaas
 * Prometheus operator 
 * Prometheus cluster
 * Alert manager
@@ -34,6 +35,7 @@ First, we will need to set few DNS records in ```/etc/hosts``` file to be able a
 127.0.0.1 kibana.kubernetes.local
 127.0.0.1 argo.kubernetes.local
 127.0.0.1 jaeger.kubernetes.local
+127.0.0.1 openfaas.kubernetes.local
 ```
 
 After setting up the DNS records, you can run the cluster by running :
@@ -55,4 +57,9 @@ minikube dashboard
 To get the ArgoCd web-ui password (for admin user) , run :
 ```
 kubectl get pods -n cd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
+```
+OpenFaas UI credentials:
+```
+User: admin
+Pass: 8627b5a542b1f5134246c23b22b6f2dfd10c8898
 ```
