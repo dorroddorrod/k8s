@@ -27,7 +27,7 @@ sleep 10
 #sleep 10
 kubectl apply -f $PWD/infra/visibility/prometheus-cluster-monitoring/application.yaml
 #sleep 10
-#kubectl apply -f $PWD/infra/visibility/grafana/application.yaml
+kubectl apply -f $PWD/infra/visibility/grafana/application.yaml
 #sleep 10
 #kubectl apply -f $PWD/infra/visibility/alertmanager/application.yaml
 #sleep 10

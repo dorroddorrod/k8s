@@ -169,7 +169,7 @@ data:
           use_kiali_token: false
           username: ""
         enabled: true
-        in_cluster_url: http://simple-prod-query.monitoring.svc:16686/jaeger
+        in_cluster_url: http://simple-prod-query.monitoring.svc:16686
         namespace_selector: true
         url: ""
         whitelist_istio_system:

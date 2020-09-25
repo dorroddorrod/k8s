@@ -10,3 +10,7 @@ spec:
       tracer:
         zipkin:
           address: simple-prod-collector.monitoring.svc:9411
+  meshConfig:
+    defaultConfig:
+      tracing:
+        sampling: 100
