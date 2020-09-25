@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-minikube start --cpus=6 --memory=10000
+minikube start --cpus=6 --memory=11000
 sleep 120
 kubectl apply -f namespaces.yaml
 sleep 120

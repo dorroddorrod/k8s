@@ -18,6 +18,7 @@ This setup includes:
 * Example application for logs
 * Example application for metrics
 * Example application for tracing
+* Example application for service mesh
 * Fluent-bit operator
 * Fluent-bit deamonset
 * Weave-scope
@@ -38,6 +39,8 @@ First, we will need to set few DNS records in ```/etc/hosts``` file to be able a
 127.0.0.1 argo.kubernetes.local
 127.0.0.1 jaeger.kubernetes.local
 127.0.0.1 openfaas.kubernetes.local
+127.0.0.1 bookinfo-app.kubernetes.local
+127.0.0.1 kiali.kubernetes.local
 ```
 
 After setting up the DNS records, you can run the cluster by running :
