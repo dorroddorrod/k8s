@@ -49,5 +49,3 @@ spec:
   endpoints:
     - port: http-monitoring
       interval: 15s
-    - port: http-policy-monitoring
-      interval: 15s
