@@ -142,7 +142,7 @@ data:
             workload: var-workload
         enabled: true
         in_cluster_url: http://grafana.monitoring.svc
-        url: ""
+        url: "http://grafana.monitoring.svc"
       istio:
         istio_identity_domain: svc.cluster.local
         istio_sidecar_annotation: sidecar.istio.io/status
