@@ -2,6 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: prometheus-oper-istio-dataplane
+  namespace: istio-system
   labels:
     k8s-app: app
     monitoring: istio-dataplane
@@ -34,6 +35,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: prometheus-oper-istio-controlplane
+  namespace: istio-system
   labels:
     k8s-app: app
     release: prometheus
