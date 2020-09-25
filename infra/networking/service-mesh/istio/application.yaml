@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
     targetRevision: HEAD
-    path: infra/service-mesh/istio
+    path: infra/networking/service-mesh/istio
     directory:
       recurse: true
   destination:
