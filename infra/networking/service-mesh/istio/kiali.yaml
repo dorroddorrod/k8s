@@ -126,11 +126,11 @@ data:
         auth:
           ca_file: ""
           insecure_skip_verify: false
-          password: ""
+          password: "admin"
           token: ""
           type: none
           use_kiali_token: false
-          username: ""
+          username: "admin"
         dashboards:
         - name: Istio Service Dashboard
           variables:
