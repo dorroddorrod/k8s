@@ -4,6 +4,8 @@ metadata:
   name: traefik-ingress-controller
   labels:
     k8s-app: traefik-ingress-lb
+    app: traefik
+    version: v1
   annotations:
     "sidecar.jaegertracing.io/inject": "true"
 spec:
