@@ -128,7 +128,7 @@ data:
           insecure_skip_verify: false
           password: "admin"
           token: ""
-          type: none
+          type: basic
           use_kiali_token: false
           username: "admin"
         dashboards:
