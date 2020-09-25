@@ -111,6 +111,12 @@ spec:
         - mountPath: /grafana-dashboard-definitions/0/workload-total
           name: grafana-dashboard-workload-total
           readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio
+          name: dashboards-istio
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-services
+          name: dashboards-istio-services
+          readOnly: false
       nodeSelector:
         beta.kubernetes.io/os: linux
       securityContext:
@@ -198,3 +204,9 @@ spec:
       - configMap:
           name: grafana-dashboard-workload-total
         name: grafana-dashboard-workload-total
+      - configMap:
+          name: istio-grafana-dashboards
+        name: dashboards-istio
+      - configMap:
+          name: istio-services-grafana-dashboards
+        name: dashboards-istio-services
