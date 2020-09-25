@@ -3,6 +3,8 @@ This setup includes:
 
 * Traefik ingress controller
 * OpenFaas
+* Istio
+* Kiali
 * Prometheus operator 
 * Prometheus cluster
 * Alert manager
