@@ -18,6 +18,8 @@ spec:
       labels:
         k8s-app: traefik-ingress-lb
         name: traefik-ingress-lb
+        app: traefik
+        version: v1
     spec:
       serviceAccountName: traefik-ingress-controller
       terminationGracePeriodSeconds: 60
