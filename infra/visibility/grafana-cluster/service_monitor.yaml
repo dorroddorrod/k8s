@@ -7,6 +7,6 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: grafana-service
+      app: grafana
   endpoints:
     - port: grafana

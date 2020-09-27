@@ -7,6 +7,6 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: grafana-operator-metrics
+      name: grafana-operator
   endpoints:
     - port: http-metrics
