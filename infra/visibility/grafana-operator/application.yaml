@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
     targetRevision: HEAD
-    path: infra/visibility/grafana
+    path: infra/visibility/grafana-operator
     directory:
       recurse: true
   destination:
