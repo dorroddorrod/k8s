@@ -5,6 +5,9 @@ metadata:
   labels:
     app: grafana
 spec:
+  service:
+    labels:
+      app: grafana
 #  deployment:
 #    replicas: 2
 #  dataStorage:
