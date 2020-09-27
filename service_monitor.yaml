@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: traefik-metrics
-  namespace: kube-system
+  namespace: traefik
   labels:
     k8s-app: app
 spec:
