@@ -9,6 +9,9 @@ spec:
   configMapRef:
     name: grafana-dashboard-apiserver
     key: apiserver
+  plugins:
+    - name: "jdbranham-diagram-panel"
+      version: "1.6.2"
 ---
 apiVersion: integreatly.org/v1alpha1
 kind: GrafanaDashboard
