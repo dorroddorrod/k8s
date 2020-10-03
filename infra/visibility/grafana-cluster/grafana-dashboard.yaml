@@ -13,7 +13,7 @@ spec:
     - name: "jdbranham-diagram-panel"
       version: "1.6.2"
     - name: "agenty-flowcharting-panel"
-        version: "0.9.0"
+      version: "0.9.0"
 ---
 apiVersion: integreatly.org/v1alpha1
 kind: GrafanaDashboard
