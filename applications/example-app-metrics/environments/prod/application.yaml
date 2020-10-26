@@ -8,11 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
     targetRevision: HEAD
-    path: applications/example-app-metrics/environments/prod
-    directory:
-      recurse: true
-    kustomize:
-
+    path: applications/example-app-metrics/environments/prod/kustomization.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: example
