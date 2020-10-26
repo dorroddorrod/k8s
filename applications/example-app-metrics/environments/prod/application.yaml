@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/dorroddorrod/k8s.git
     targetRevision: HEAD
     path: applications/example-app-metrics/environments/prod/
+    directory:
+      recurse: false
   destination:
     server: https://kubernetes.default.svc
     namespace: example
