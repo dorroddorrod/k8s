@@ -4,3 +4,11 @@
 - op: replace
   path: /Kind
   value: Rollout
+- op: replace
+  path: /spec/strategy
+  value:
+    strategy:
+      canary:
+        steps:
+          - setWeight: 20
+          - pause: { }
