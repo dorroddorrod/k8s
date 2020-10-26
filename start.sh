@@ -43,7 +43,7 @@ kubectl apply -f $PWD/infra/visibility/jaeger-operator/application.yaml
 sleep 40
 kubectl apply -f $PWD/infra/visibility/jaeger-cluster/application.yaml
 sleep 40
-kubectl apply -f $PWD/applications/example-app-metrics/application.yaml
+kubectl apply -f $PWD/applications/example-app-metrics/overlays/prod/application.yaml
 sleep 40
 kubectl apply -f $PWD/applications/example-app-logs/application.yaml
 sleep 40
