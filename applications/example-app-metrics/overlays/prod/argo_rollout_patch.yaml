@@ -1,0 +1,6 @@
+- op: replace
+  path: /apiVersion
+  value: argoproj.io/v1alpha1
+- op: replace
+  path: /Kind
+  value: Rollout

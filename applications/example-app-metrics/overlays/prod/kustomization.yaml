@@ -5,7 +5,7 @@ commonLabels:
 bases:
   - ../../base/
 patches:
-  - path: api_patch.yaml
+  - path: argo_rollout_patch.yaml
     target:
       group: apps
       version: v1
