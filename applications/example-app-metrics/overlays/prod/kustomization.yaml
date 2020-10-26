@@ -11,3 +11,6 @@ patches:
       version: v1
       kind: Deployment
       name: example-deploy-metrics
+images:
+  - name: quay.io/brancz/prometheus-example-app
+    newTag: v0.2.0
