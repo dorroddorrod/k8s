@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
     targetRevision: HEAD
-    path: applications/example-app-metrics
+    path: applications/example-app-metrics/environments/prod
     directory:
       recurse: true
   destination:
