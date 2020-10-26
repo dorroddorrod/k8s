@@ -7,8 +7,10 @@
 - op: replace
   path: /spec/strategy
   value:
-    strategy:
       canary:
         steps:
           - setWeight: 20
           - pause: { }
+- op: replace
+  path: /spec/replicas
+  value: 5
