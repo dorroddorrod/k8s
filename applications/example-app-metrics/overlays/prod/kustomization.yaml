@@ -4,3 +4,10 @@ commonLabels:
   environment: prod
 bases:
   - ../../base/
+patches:
+  - path: api_patch.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: example-deploy-metrics
