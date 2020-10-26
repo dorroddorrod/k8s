@@ -11,6 +11,7 @@ This setup includes:
 * Node-exporter
 * Metrics-server
 * ArgoCd
+* Argo-rollouts
 * Grafana operator
 * Grafana cluster
 * ELK-operator
