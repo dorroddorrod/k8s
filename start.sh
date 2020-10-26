@@ -7,6 +7,8 @@ kubectl apply -n traefik -f $PWD/infra/networking/ingress-controller/traefik
 sleep 40
 kubectl apply -n cd -f $PWD/infra/continuous-delivery/argo-cd
 sleep 40
+kubectl apply -f $PWD/infra/continuous-delivery/argo-rollouts
+sleep 40
 kubectl apply -f $PWD/infra/faas/openFaas/application.yaml
 sleep 40
 kubectl apply -f $PWD/infra/visibility/prometheus-operator/application.yaml
