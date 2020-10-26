@@ -1,7 +1,0 @@
-resources:
-  - ../../base/deployment.yaml
-  - ../../base/service.yaml
-  - ../../base/configmap.yaml
-  - ../../base/horizontal_pod_autoscaler.yaml
-  - ../../base/ingress.yaml
-  - ../../base/service_monitor.yaml
