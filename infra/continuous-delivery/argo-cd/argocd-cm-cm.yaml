@@ -5,3 +5,10 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-cm
+data:
+  resource.customizations: |
+    extensions/Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          return hs
