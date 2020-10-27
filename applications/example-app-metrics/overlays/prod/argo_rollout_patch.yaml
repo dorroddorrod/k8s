@@ -8,23 +8,23 @@
   path: /spec/strategy
   value:
       canary:
-#        analysis:
-#          templates:
-#            - templateName: success-rate
-#              clusterScope: true
-#          startingStep: 1
-#          args:
-#            - name: service-name
-#              value: app.kubernetes.local
+        analysis:
+          templates:
+            - templateName: success-rate
+              clusterScope: true
+          startingStep: 1
+          args:
+            - name: service-name
+              value: app.kubernetes.local
         steps:
           - setWeight: 20
           - pause: {duration: 1m}
-  #        - setWeight: 40
-  #        - pause: {duration: 1m}
-  #        - setWeight: 60
-  #        - pause: {duration: 1m}
-  #        - setWeight: 80
-  #        - pause: {duration: 1m}
+          - setWeight: 40
+          - pause: {duration: 1m}
+          - setWeight: 60
+          - pause: {duration: 1m}
+          - setWeight: 80
+          - pause: {duration: 1m}
 - op: replace
   path: /spec/replicas
   value: 2
