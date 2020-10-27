@@ -12,7 +12,7 @@
           templates:
             - templateName: success-rate
               clusterScope: true
-          startingStep: 2
+          startingStep: 1
           args:
             - name: service-name
               value: app.kubernetes.local
