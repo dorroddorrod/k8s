@@ -11,6 +11,7 @@
         analysis:
           templates:
             - templateName: success-rate
+              clusterScope: true
           startingStep: 2
           args:
             - name: service-name
