@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/part-of: argocd
   name: argocd-server
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-server
@@ -16,30 +15,11 @@ spec:
       labels:
         app.kubernetes.io/name: argocd-server
     spec:
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-            - podAffinityTerm:
-                labelSelector:
-                  matchLabels:
-                    app.kubernetes.io/name: argocd-server
-                topologyKey: failure-domain.beta.kubernetes.io/zone
-              weight: 100
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchLabels:
-                  app.kubernetes.io/name: argocd-server
-              topologyKey: kubernetes.io/hostname
       containers:
         - command:
             - argocd-server
             - --staticassets
             - /shared/app
-            - --redis
-            - argocd-redis-ha-haproxy:6379
-          env:
-            - name: ARGOCD_API_SERVER_REPLICAS
-              value: "2"
           image: argoproj/argocd:v1.7.8
           imagePullPolicy: Always
           name: argocd-server

@@ -24,8 +24,6 @@ spec:
             - "20"
             - --operation-processors
             - "10"
-            - --redis
-            - argocd-redis-ha-haproxy:6379
           image: argoproj/argocd:v1.7.8
           imagePullPolicy: Always
           livenessProbe:
