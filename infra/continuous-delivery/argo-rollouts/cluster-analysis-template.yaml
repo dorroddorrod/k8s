@@ -9,6 +9,8 @@ spec:
       value: '9090'
   metrics:
     - name: success-rate
+      interval: 60s
+      count: 3
       successCondition: result[0] >= 0.95
       provider:
         prometheus:
