@@ -10,7 +10,8 @@ spec:
   metrics:
     - name: success-rate
       interval: 60s
-      count: 3
+      failureLimit: 2
+      count: 4
       successCondition: result[0] >= 0.95
       provider:
         prometheus:
