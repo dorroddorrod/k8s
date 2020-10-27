@@ -45,10 +45,10 @@ kubectl apply -f $PWD/infra/visibility/jaeger-cluster/application.yaml
 sleep 40
 kubectl apply -f $PWD/applications/example-app-metrics/overlays/prod/application.yaml
 sleep 40
-kubectl apply -f $PWD/applications/example-app-logs/application.yaml
+kubectl apply -f $PWD/applications/example-app-logs/overlays/prod/application.yaml
 sleep 40
-kubectl apply -f $PWD/applications/example-app-tracing/application.yaml
+kubectl apply -f $PWD/applications/example-app-tracing/overlays/prod/application.yaml
 sleep 40
-kubectl apply -f $PWD/applications/example-app-istio/application.yaml
+kubectl apply -f $PWD/applications/example-app-istio/overlays/prod/application.yaml
 kubectl apply -f service_monitor.yaml
 minikube addons enable metrics-server
