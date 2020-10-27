@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-minikube start --cpus=6 --memory=11000
-sleep 40
+#minikube start --cpus=6 --memory=11000
+#sleep 40
 kubectl apply -f namespaces.yaml
 sleep 40
 kubectl apply -n traefik -f $PWD/infra/networking/ingress-controller/traefik
@@ -20,8 +20,8 @@ sleep 40
 kubectl apply -f $PWD/infra/visibility/elk-cluster/application.yaml
 sleep 40
 kubectl apply -f $PWD/infra/networking/service-mesh/istio/application.yaml
-sleep 40
-kubectl apply -n weave -f $PWD/infra/visibility/weave-scope
+#sleep 40
+#kubectl apply -n weave -f $PWD/infra/visibility/weave-scope
 sleep 40
 kubectl apply -f $PWD/infra/visibility/fluent-bit/setup/application.yaml
 sleep 40
@@ -51,4 +51,4 @@ kubectl apply -f $PWD/applications/example-app-tracing/overlays/prod/application
 sleep 40
 kubectl apply -f $PWD/applications/example-app-istio/overlays/prod/application.yaml
 kubectl apply -f service_monitor.yaml
-minikube addons enable metrics-server
+#minikube addons enable metrics-server
