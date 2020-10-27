@@ -9,8 +9,8 @@
   value:
       canary:
         steps:
-          - setWeight: 20
+          - setWeight: 50
           - pause: { }
 - op: replace
   path: /spec/replicas
-  value: 5
+  value: 2
