@@ -6,7 +6,7 @@ spec:
   args:
     - name: service-name
     - name: prometheus-port
-      value: 9090
+      value: '9090'
   metrics:
     - name: success-rate
       successCondition: result[0] >= 0.95
