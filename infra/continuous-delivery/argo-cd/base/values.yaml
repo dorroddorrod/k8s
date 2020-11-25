@@ -1,0 +1,15 @@
+metadata:
+  name: argo-cd
+spec:
+  source:
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    path: infra/continuous-delivery/argo-cd/base
+  destination:
+    namespace: cd
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+server:
+  extraArgs:
+    - --insecure
