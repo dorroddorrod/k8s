@@ -16,5 +16,5 @@ spec:
     namespace: {{ .Values.spec.destination.namespace }}
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: true
+      prune: {{ .Values.spec.syncPolicy.automated.prune }}
+      selfHeal: {{ .Values.spec.syncPolicy.automated.selfHeal }}

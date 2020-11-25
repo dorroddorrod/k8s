@@ -6,6 +6,10 @@ spec:
     repoURL: https://github.com/dorroddorrod/k8s.git
     targetRevision: HEAD
     path: infra/continuous-delivery/argo-cd
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
 server:
   extraArgs:
     - --insecure
