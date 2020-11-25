@@ -1,0 +1,4 @@
+dependencies:
+  - name: stevehipwell
+    version: 1.2.0
+    repository: https://stevehipwell.github.io/helm-charts/

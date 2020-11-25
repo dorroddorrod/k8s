@@ -1,54 +1,18 @@
 #!/usr/bin/env bash
-#minikube start --cpus=6 --memory=11000
-#sleep 40
+root=$PWD
+environment=prod
 kubectl apply -f namespaces.yaml
-sleep 40
-kubectl apply -n traefik -f $PWD/infra/networking/ingress-controller/traefik
-sleep 40
-kubectl apply -n cd -f $PWD/infra/continuous-delivery/argo-cd
-sleep 40
-kubectl apply -f $PWD/infra/continuous-delivery/argo-rollouts/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/faas/openFaas/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/prometheus-operator/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/metrics-server/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/elk-operator/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/elk-cluster/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/networking/service-mesh/istio/application.yaml
-#sleep 40
-#kubectl apply -n weave -f $PWD/infra/visibility/weave-scope
-sleep 40
-kubectl apply -f $PWD/infra/visibility/fluent-bit/setup/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/fluent-bit/logging-stack/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/prometheus-cluster-monitoring/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/grafana-operator/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/grafana-cluster/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/alertmanager/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/kube-state-metrics/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/node-exporter/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/jaeger-operator/application.yaml
-sleep 40
-kubectl apply -f $PWD/infra/visibility/jaeger-cluster/application.yaml
-sleep 40
-kubectl apply -f $PWD/applications/example-app-metrics/overlays/prod/application.yaml
-sleep 40
-kubectl apply -f $PWD/applications/example-app-logs/overlays/prod/application.yaml
-sleep 40
-kubectl apply -f $PWD/applications/example-app-tracing/overlays/prod/application.yaml
-sleep 40
-kubectl apply -f $PWD/applications/example-app-istio/overlays/prod/application.yaml
-kubectl apply -f service_monitor.yaml
-#minikube addons enable metrics-server
+
+function install {
+  sleep 20
+  cd $root/$1
+  helm dependency update base/
+  helm install $2  -f overlays/$environment/values.yaml -f base/values.yaml  --namespace $3 base/
+}
+install "infra/continuous-delivery/argo-cd" "argo-cd" "cd"
+install "infra/continuous-delivery/argo-rollouts" "argo-rollouts" "cd"
+install "infra/faas/openFaas" "openFaas" "faas"
+#install "infra/networking/ingress-controller" "traefik" "traefik"
+install "infra/networking/service-mesh/istio" "istio-operator" "istio-operator"
+
+#kubectl apply -f service_monitor.yaml

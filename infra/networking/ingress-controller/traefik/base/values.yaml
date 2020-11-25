@@ -1,0 +1,11 @@
+metadata:
+  name: traefik
+  namespace: traefik
+spec:
+  source:
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    path: infra/networking/ingress-controller/traefik/base
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
