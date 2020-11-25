@@ -6,15 +6,18 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: {{ .Values.spec.source.path }}
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    targetRevision: HEAD
+    path: infra/continuous-delivery/argo-cd
+    helm:
+      valueFiles:
+        - values-production.yaml
     directory:
-      recurse: true
+      recurse: false
   destination:
-    server: {{ .Values.spec.destination.server }}
-    namespace: {{ .Values.spec.destination.namespace }}
+    server: https://kubernetes.default.svc
+    namespace: cd
   syncPolicy:
     automated:
-      prune: {{ .Values.spec.syncPolicy.automated.prune }}
-      selfHeal: {{ .Values.spec.syncPolicy.automated.selfHeal }}
+      prune: false
+      selfHeal: false
