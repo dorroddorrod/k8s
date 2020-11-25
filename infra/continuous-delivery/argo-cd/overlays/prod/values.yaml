@@ -5,4 +5,4 @@ spec:
     server: https://kubernetes.default.svc
 controller:
   args:
-    operationProcessors: 11
+    operationProcessors: 15
