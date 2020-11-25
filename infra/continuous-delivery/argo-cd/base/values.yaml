@@ -1,4 +1,5 @@
-namespace: cd
+Release:
+  Namespace: cd
 metadata:
   name: argo-cd
   namespace: cd
