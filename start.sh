@@ -14,5 +14,5 @@ install "infra/continuous-delivery/argo-rollouts" "argo-rollouts" "cd"
 install "infra/faas/openFaas" "openfaas" "openfaas"
 #install "infra/networking/ingress-controller" "traefik" "traefik"
 install "infra/networking/service-mesh/istio" "istio-operator" "istio-operator"
-
+install "infra/visibility/kubernetes-dashboard" "kubernetes-dashboard" "kube-system"
 #kubectl apply -f service_monitor.yaml
