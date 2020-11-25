@@ -1,4 +1,5 @@
-env: prod
+metadata:
+  env: prod
 controller:
   args:
     operationProcessors: 11

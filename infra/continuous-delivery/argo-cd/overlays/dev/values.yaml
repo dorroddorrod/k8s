@@ -1,4 +1,5 @@
-env: dev
+metadata:
+  env: dev
 controller:
   args:
     operationProcessors: 9
