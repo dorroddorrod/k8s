@@ -12,7 +12,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - ../overlays/dev/values.yaml
+        - ../overlays/{{ .Values.env }}/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ .Values.spec.destination.namespace }}
