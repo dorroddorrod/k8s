@@ -1,8 +1,20 @@
 metadata:
-  env: prod
+  name: argo-cd
+  namespace: cd
+  env: dev
 spec:
   destination:
-    server: https://kubernetes.default.svc
-controller:
-  args:
-    operationProcessors: 11
+    server: https://kubernetes2.default.svc
+  controller:
+    args:
+      operationProcessors: 11
+  source:
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    path: infra/continuous-delivery/argo-cd/base
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+server:
+  extraArgs:
+    - --insecure

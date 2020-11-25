@@ -11,8 +11,8 @@ spec:
     path: {{ .Values.spec.source.path }}
     helm:
       valueFiles:
-        - "../overlays/{{ .Values.metadata.env }}/values.yaml"
         - values.yaml
+        - "../overlays/{{ .Values.metadata.env }}/values.yaml"
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: {{ .Values.metadata.namespace }}
