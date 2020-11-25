@@ -1,0 +1,11 @@
+metadata:
+  name: argo-rollouts
+  namespace: cd
+spec:
+  source:
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    path: infra/continuous-delivery/argo-rollouts/base
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
