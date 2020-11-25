@@ -15,7 +15,7 @@ spec:
         - "../overlays/{{ .Values.metadata.env }}/values.yaml"
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.spec.destination.namespace }}
+    namespace: {{ .Values.namespace }}
   syncPolicy:
     automated:
       prune: {{ .Values.spec.syncPolicy.automated.prune }}
