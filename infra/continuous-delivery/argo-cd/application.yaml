@@ -13,7 +13,7 @@ spec:
       valueFiles:
         - values.yaml
     directory:
-      recurse: true
+      recurse: false
   destination:
     server: https://kubernetes.default.svc
     namespace: cd
