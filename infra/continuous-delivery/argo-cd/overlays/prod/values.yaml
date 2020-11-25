@@ -2,7 +2,7 @@ metadata:
   env: prod
 spec:
   destination:
-    server: https://kubernetes1.default.svc
+    server: https://kubernetes.default.svc
 controller:
   args:
     operationProcessors: 11
