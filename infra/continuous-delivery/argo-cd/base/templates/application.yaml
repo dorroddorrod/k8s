@@ -15,7 +15,7 @@ spec:
         - "../overlays/{{ .Values.metadata.env }}/values.yaml"
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: {{ .Values.namespace }}
+    namespace: {{ .Values.metadata.namespace }}
   syncPolicy:
     automated:
       prune: {{ .Values.spec.syncPolicy.automated.prune }}
