@@ -13,8 +13,6 @@ spec:
       valueFiles:
         - values.yaml
         - ../overlays/dev/values.yaml
-    directory:
-      recurse: false
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ .Values.spec.destination.namespace }}
