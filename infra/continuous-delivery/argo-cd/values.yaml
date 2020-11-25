@@ -1,3 +1,11 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cd
+  source:
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    targetRevision: HEAD
+    path: infra/continuous-delivery/argo-cd
 server:
   extraArgs:
     - --insecure

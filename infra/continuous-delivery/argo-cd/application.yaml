@@ -6,14 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/dorroddorrod/k8s.git
-    targetRevision: HEAD
-    path: infra/continuous-delivery/argo-cd
+    repoURL: { { .Values.spec.source.repoURL } }
+    targetRevision: { { .Values.spec.source.targetRevision } }
+    path: { { .Values.spec.source.path } }
     directory:
       recurse: false
   destination:
-    server: https://kubernetes.default.svc
-    namespace: cd
+    server: {{ .Values.spec.destination.server }}
+    namespace: {{ .Values.spec.destination.namespace }}
   syncPolicy:
     automated:
       prune: false
