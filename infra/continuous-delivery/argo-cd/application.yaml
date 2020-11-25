@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
-    targetRevision: HEAD
+    targetRevision: kuku
     path: infra/continuous-delivery/argo-cd
     helm:
       valueFiles:
