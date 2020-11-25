@@ -1,5 +1,5 @@
 metadata:
-  name: open-faas
+  name: openfaas
   namespace: fass
 spec:
   source:
