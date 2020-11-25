@@ -20,5 +20,5 @@ spec:
     namespace: {{ .Values.spec.destination.namespace }}
   syncPolicy:
     automated:
-      prune: {{ .Values.spec.syncPolicy.prune }}
-      selfHeal: {{ .Values.spec.syncPolicy.selfHeal }}
+      prune: {{ .Values.spec.syncPolicy.automated.prune }}
+      selfHeal: {{ .Values.spec.syncPolicy.automated.selfHeal }}
