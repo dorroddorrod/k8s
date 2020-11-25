@@ -1,3 +1,4 @@
+env: prod
 controller:
   args:
     operationProcessors: 11
