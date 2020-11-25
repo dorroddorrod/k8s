@@ -1,6 +1,6 @@
 metadata:
   name: openfaas
-  namespace: fass
+  namespace: openfaas
 spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
