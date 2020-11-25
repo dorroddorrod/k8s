@@ -12,6 +12,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
+        - ../overlays/dev/values.yaml
     directory:
       recurse: false
   destination:
