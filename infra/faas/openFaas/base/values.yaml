@@ -4,7 +4,7 @@ metadata:
 spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
-    path: infra/fass/openFass/base
+    path: infra/faas/openFaas/base
   syncPolicy:
     automated:
       prune: false
