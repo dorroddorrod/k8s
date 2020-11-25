@@ -1,7 +1,7 @@
 metadata:
   name: argo-cd
   namespace: cd
-  env: "../overlays/prod/values.yaml"
+  env: prod
 spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
