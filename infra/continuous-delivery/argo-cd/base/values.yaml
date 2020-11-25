@@ -10,7 +10,7 @@ spec:
       prune: false
       selfHeal: false
   destination:
-    server: https://kubernetes.default.svc
+    server: https://kubernetes123.default.svc
 server:
   extraArgs:
     - --insecure
