@@ -12,7 +12,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - {{ .Values.spec.source.helm.valueFiles.env }}
+        - ../overlays/{{ .Values.env }}/values.yaml
     directory:
       recurse: false
   destination:

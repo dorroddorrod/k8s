@@ -5,9 +5,6 @@ spec:
   source:
     repoURL: https://github.com/dorroddorrod/k8s.git
     path: infra/continuous-delivery/argo-cd/base
-    helm:
-      valueFiles:
-        env: ""
   destination:
     namespace: cd
   syncPolicy:
