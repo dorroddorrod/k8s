@@ -10,7 +10,7 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision }}
     path: {{ .Values.spec.source.path }}
     directory:
-      recurse: false
+      recurse: true
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: {{ .Values.spec.destination.namespace }}
