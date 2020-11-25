@@ -2,19 +2,19 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd
+  namespace: cd
 spec:
-  destination:
-    namespace: cd
-    server: 'https://kubernetes.default.svc'
-  source:
-    repoURL: 'https://argoproj.github.io/argo-helm'
-    targetRevision: 2.9.5
-    chart: argo-cd
-    helm:
-      valueFiles:
-        - https://raw.githubusercontent.com/dorroddorrod/k8s/master/infra/continuous-delivery/argo-cd/values.yaml
   project: default
+  source:
+    repoURL: https://github.com/dorroddorrod/k8s.git
+    targetRevision: HEAD
+    path: infra/continuous-delivery/argo-cd
+    directory:
+      recurse: false
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: example
   syncPolicy:
     automated:
       prune: false
-      selfHeal: true
+      selfHeal: false
