@@ -7,7 +7,7 @@ function install {
   sleep 5
   cd $root/$1
   helm dependency update base/
-  helm upgrade  $2  -f overlays/$environment/values.yaml -f base/values.yaml --install --namespace $3 base/
+  helm upgrade $2 -f overlays/$environment/values.yaml -f base/values.yaml --install --namespace $3 base/
 }
 install "infra/continuous-delivery/argo-cd" "argo-cd" "cd"
 install "infra/continuous-delivery/argo-rollouts" "argo-rollouts" "cd"
