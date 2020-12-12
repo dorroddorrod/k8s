@@ -18,3 +18,4 @@ install "infra/visibility/kubernetes-dashboard" "kubernetes-dashboard" "kube-sys
 #kubectl apply -f service_monitor.yaml
 
 
+echo "Done"
