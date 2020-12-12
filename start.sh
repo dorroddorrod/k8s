@@ -16,3 +16,5 @@ install "infra/faas/openFaas" "openfaas" "openfaas"
 install "infra/networking/service-mesh/istio" "istio-operator" "istio-operator"
 install "infra/visibility/kubernetes-dashboard" "kubernetes-dashboard" "kube-system"
 #kubectl apply -f service_monitor.yaml
+
+
